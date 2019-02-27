@@ -4,4 +4,5 @@ from app import app
 
 @app.route('/', methods=['GET'])
 def index():
-    return "testing"
+    return render_template("index.html", example="First batch")
+    
