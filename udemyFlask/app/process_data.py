@@ -8,15 +8,12 @@ def get_data(query_string):
     data = res.read()
     return json.loads(data.decode("utf-8"))
 
-def process():
-    data = get_data("/v1/ticker/bitcoin/")
+def process(enteredCoin):
+    data = get_data("/v1/ticker/{}/".format(enteredCoin))
     return data[0]
 
 def calculate_coin(price_usd):
-    if float(price_usd) > 40:
-        return True
-    else:
-        return False
+    return(float(price_usd) > 40)
 
 def process_coins():
     data = get_data("/v1/ticker/?limit=10")
