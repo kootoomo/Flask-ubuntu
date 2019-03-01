@@ -49,8 +49,8 @@
             <div class="col-md-3">
                 <div class="panel panel-default">
                 <div class="panel-body">
-                <span class="boxValue"><center>{{ data["percent_change_24h"] }}</center></span>
-                <div><center>24 Hours % Change</center></div>
+                <span class="boxValue"><center>{{ data["percent_change_24h"] }}%</center></span>
+                <div><center>24 Hours Change</center></div>
                 </div>
                 </div>
             </div>   
@@ -58,8 +58,8 @@
             <div class="col-md-3">
                 <div class="panel panel-default">
                 <div class="panel-body">
-                <span class="boxValue"><center>{{ data["percent_change_7d"] }}</center></span>
-                <div><center>7 Days % Change</center></div>
+                <span class="boxValue"><center>{{ data["percent_change_7d"] }}%</center></span>
+                <div><center>7 Days Change</center></div>
                 </div>
                 </div>
             </div>   
@@ -69,15 +69,15 @@
                     <th></th>
                     <th>Name</th>
                     <th>Price</th>                    
-                    <th>% Change 1 Hour</th>
-                    <th>Price is Over 40?</th>            
+                    <th>Change 1 Hour</th>
+                    <th>Price is Over $40?</th>            
                 </tr>
             {% for item in process_coins %}
                 <tr>
                     <td>{{ loop.index }}</td>
                     <td>{{ item["name"] }}</td>
-                    <td>{{ item["price_usd"] }}</td>
-                    <td>{{ item["percent_change_1h"] }}</td>
+                    <td>${{ item["price_usd"] }}</td>
+                    <td>{{ item["percent_change_1h"] }}%</td>
                     <td>{{ item["isover40"] }}</td>                    
                 </tr>
             {% endfor %}
