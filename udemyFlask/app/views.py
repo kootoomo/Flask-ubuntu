@@ -5,4 +5,5 @@ from app import process_data
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template("index.html", data=process_data.process())
+    return render_template("index.html", data=process_data.process(),
+    	process_coins=process_data.process_coins())
